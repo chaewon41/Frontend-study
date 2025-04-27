@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Movie from "../components/Movie";
+import styles from "../components/Movie.module.css";
 
 function Home() {
     const [loading, setLoading] = useState(true);
@@ -18,7 +19,7 @@ function Home() {
       <div>
         {loading ? 
         (<h1>Loading...</h1>) : 
-        (<div>
+        (<div className={styles.movieList}>
           {movies.map((movie) => 
           <Movie
           key={movie.id}
